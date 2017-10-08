@@ -3,82 +3,9 @@
 <html>
 <head>
     <title>Flight Management System</title>
+    <link href="css/main.css" rel="stylesheet">
     <style>
-        *{
-            margin:0px;
-            padding: 0px;
-        }
-        .top{
-            height: 7%;
-            width: 100%;
-            float: left;
-            background-color: rgba(123, 19, 0, 0.69);
-        }
-        .top ul li{
-            list-style: none;
-            display: inline-block;
-            float: left;
-            margin-top: 10px;
-            margin-left: 170px;
-        }
-        a,a:visited{
-            color: #fff400;
-            text-decoration: none;
-            font-family: 'MS Reference Sans Serif', verdana, arial, sans-serif;
-        }
-        a:hover{
-            color: white;
 
-        }
-        .bottom{
-            width: 100%;
-            height: 80%;
-            float: left;
-            display: flex;
-            align-items: flex-start;
-            justify-content:flex-start;
-
-        }
-
-        .main{
-            width: 100%;
-            height: 100%;
-        }
-
-        .bottom ul li{
-            font-size: 1.3em;
-            color: #f9ffdb;
-            list-style: none;
-        }
-        label{
-            margin-left: 35px;
-        }
-        input,select{
-            border-radius: 6px;
-            height: 30px;
-            width: 300px;
-            margin-left: 35px;
-        }
-        input[type="submit"]{
-            background-color: #0a2c91;
-            border: none;
-            width: 150px;
-            justify-content: center;
-            margin-left: 100px;
-            margin-bottom: 35px;
-            box-shadow:0px 0 10px #cde0ff;
-            color: white;
-        }
-        fieldset{
-            border:0px solid #ffffff;
-            border-radius:8px;
-            box-shadow:0 0 15px #110080;
-            height: auto;
-            width: 380px;
-            background: rgba(3, 244, 122, 0.08);
-            margin-left: 50px;
-            margin-top: 50px;
-        }
         h2{
             font-size: 3em;
             color: white;
@@ -93,6 +20,9 @@
             font-size: 1.5em;
             margin-top: 20px;
         }
+        label{
+            margin-left: 35px;
+        }
 
     </style>
 </head>
@@ -104,8 +34,22 @@
             <li><a href="index.jsp">Register</a></li>
             <li><a href="login.jsp">Login</a></li>
             <li><a href="Search.jsp">Book</a></li>
-            <li><a href="#">Contact Us</a></li>
-
+            <li><a href="Contact.jsp">Contact Us</a></li>
+            <%
+                HttpSession httpSession = request.getSession(false);
+                String name = (String) httpSession.getAttribute("name");
+                String buttonText;
+                if(name!=null){
+                    buttonText = "Logout";
+                }
+                else{
+                    buttonText="Login";
+                    name = "GuestUser";
+                }
+            %>
+            <li><span class="userName"><%= name %></span></li><div class="dropdown"><img class="userLogo" src="images/Userlogo.png">
+            <div class="dropdown-content"><a href="logout.jsp">
+                <%= buttonText%></a></div></div>
         </ul>
     </div>
     <div class="bottom">

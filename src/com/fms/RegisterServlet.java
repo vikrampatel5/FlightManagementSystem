@@ -23,7 +23,7 @@ public class RegisterServlet extends HttpServlet {
         try{
             TravellerDAO traveller = new TravellerDAO();
             traveller.addUserDetail(name, email, loginID, password,address,conNumber);
-            response.sendRedirect("Search.jsp");
+            response.sendRedirect("login.jsp");
         }catch (Exception e){
             e.printStackTrace();
         }

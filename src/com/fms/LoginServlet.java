@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.swing.*;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Iterator;
 import java.util.List;
 
@@ -45,7 +47,10 @@ public class LoginServlet extends HttpServlet {
                // System.out.println(tu.getName());
                 response.sendRedirect("Search.jsp");
             }
-            else System.out.println("Not Valid");
+            else {
+                JOptionPane.showMessageDialog(null, "Login Error!!");
+
+            }
         }catch(Exception e){
             e.printStackTrace();
         }
