@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.fms.Traveller" table="user">
+        <id column="id" name="id" type="java.lang.Integer" />
+        <property column="name" name="name" type="java.lang.String" />
+        <property column="email" name="email" type="java.lang.String" />
+        <property column="loginID" name="loginID" type="java.lang.String" />
+        <property column="password" name="password" type="java.lang.String" />
+        <property column="address" name="address" type="java.lang.String" />
+        <property column="contact" name="contact" type="java.lang.Integer" />
+    </class>
+</hibernate-mapping>

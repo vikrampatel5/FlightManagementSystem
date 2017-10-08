@@ -1,0 +1,10 @@
+<form actio="post">
+
+              name<input type="text"></br></br>
+              email<input type="email"></br></br>
+              password<input type="password"></br></br>
+              contact<input type="number"></br></br>
+              address<input type="text"></br></br>
+              <input type="submit"></br></br>
+
+          </form>
